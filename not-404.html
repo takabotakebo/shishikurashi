@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404ではありません｜肉倉市役所</title>
+<link rel="stylesheet" href="css/style.css">
+<!-- 管理番号: NK-WEB-012 / 最終ページ -->
+<style>
+  body {
+    background: #000;
+    color: #ccc;
+    transition: background 2s;
+  }
+  body.phase2 {
+    background: #050000;
+  }
+
+  #site-header { background: #0a0a0a; border-bottom-color: #1a0000; }
+  #site-header .header-text h1 { color: #555; }
+  #site-header .header-text p { color: #333; }
+  .city-emblem { background: #1a0000; color: #444; }
+  .breadcrumb { background: #0a0a0a; border-bottom-color: #111; color: #333; }
+  .breadcrumb a { color: #333; }
+  footer { background: #000; border-top: 1px solid #111; }
+  .footer-bottom { background: #000; color: #222; }
+
+  #phase1 {
+    text-align: center;
+    padding: 80px 20px 40px;
+  }
+  #phase1 .big-404 {
+    font-size: 96px;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-family: "Courier New", monospace;
+    line-height: 1;
+  }
+  #phase1 .sub-text {
+    color: #333;
+    font-size: 14px;
+    margin-top: 16px;
+    font-family: "Courier New", monospace;
+  }
+
+  #phase2 {
+    display: none;
+    opacity: 0;
+    transition: opacity 1.5s;
+    padding: 40px 0;
+  }
+  #phase2.visible {
+    opacity: 1;
+  }
+
+  .terminal-box {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    padding: 20px 24px;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 20px;
+    line-height: 2;
+  }
+  .terminal-box .prompt {
+    color: #444;
+  }
+  .terminal-box .highlight {
+    color: #cc3333;
+  }
+  .terminal-box .value {
+    color: #ff4444;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .result-section {
+    background: #0d0000;
+    border: 1px solid #2a0000;
+    padding: 20px 24px;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  .result-section h3 {
+    color: #555;
+    font-size: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #1a0000;
+    padding-bottom: 8px;
+  }
+  .result-section ul {
+    list-style: none;
+  }
+  .result-section ul li {
+    padding: 3px 0;
+    color: #666;
+  }
+  .result-section ul li::before {
+    content: "✓ ";
+    color: #c0392b;
+  }
+
+  .verdict {
+    background: #000;
+    border: 1px solid #c0392b;
+    padding: 24px;
+    font-family: "Courier New", monospace;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .verdict .v1 { color: #555; font-size: 12px; margin-bottom: 8px; }
+  .verdict .v2 { color: #aaa; font-size: 14px; margin-bottom: 4px; }
+  .verdict .v3 {
+    color: #ff2222;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 12px 0;
+    animation: flicker 2s infinite;
+  }
+  .verdict .v4 { color: #444; font-size: 11px; }
+
+  @keyframes flicker {
+    0%, 95%, 100% { opacity: 1; }
+    96%            { opacity: 0.3; }
+    97%            { opacity: 1; }
+    98%            { opacity: 0.5; }
+    99%            { opacity: 1; }
+  }
+
+  .final-notice {
+    background: #0d0000;
+    border-top: 2px solid #c0392b;
+    padding: 16px 24px;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    color: #aa3333;
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .scan-line {
+    position: fixed;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(180, 0, 0, 0.3);
+    animation: scan-down 4s linear infinite;
+    pointer-events: none;
+    z-index: 9999;
+    display: none;
+  }
+  @keyframes scan-down {
+    from { top: -4px; }
+    to   { top: 100vh; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scan-line" id="scanLine"></div>
+
+<div id="topbar">
+  <a href="index.html" class="site-name" style="text-decoration:none;color:#fff;">肉倉市役所ホームページ</a>
+  <nav>
+    <a href="index.html">トップ</a>
+    <a href="life.html">暮らし</a>
+    <a href="tourism.html">観光</a>
+    <a href="life.html">申請・手続き</a>
+    <a href="index.html#news">お知らせ</a>
+  </nav>
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="サイト内検索">
+    <button type="submit">検索</button>
+  </form>
+</div>
+
+<div id="site-header">
+  <a href="index.html" style="display:block;flex-shrink:0;"><img src="img/emblem_b.png" alt="肉倉市章" class="city-emblem-img"></a>
+  <div class="header-text">
+    <h1>肉倉市役所</h1>
+    <p>Nikukura City Official Website</p>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <a href="index.html">トップ</a> <span>›</span> —
+</div>
+
+<div class="page-wrapper">
+
+  <!-- フェーズ1 -->
+  <div id="phase1">
+    <div class="big-404">404</div>
+    <div class="sub-text">Not Found</div>
+    <div style="margin-top:16px;font-size:12px;color:#222;font-family:monospace;">
+      この市民は存在しません。
+    </div>
+  </div>
+
+  <!-- フェーズ2 -->
+  <div id="phase2">
+
+    <div class="terminal-box">
+      <div class="prompt">// あなたの検索履歴を確認しました。</div>
+      <br>
+      <div>&nbsp;&nbsp;供給課</div>
+      <div>&nbsp;&nbsp;児童見守り制度</div>
+      <div>&nbsp;&nbsp;赤印世帯</div>
+      <div>&nbsp;&nbsp;郷土資料館</div>
+      <div>&nbsp;&nbsp;緊急放送記録</div>
+      <div>&nbsp;&nbsp;市民課内部通達</div>
+      <div>&nbsp;&nbsp;行方不明者一覧</div>
+      <br>
+      <div class="prompt">// 以上の閲覧記録により、あなたは肉倉市の秘匿情報を認知したものと判断されました。</div>
+    </div>
+
+    <div class="result-section">
+      <h3>IDENTITY CHECK — 市民登録の有無を確認しています…</h3>
+      <ul>
+        <li>アクセス記録を照合中</li>
+        <li>閲覧ページ数：8ページ（要注意水準）</li>
+        <li>秘匿情報への接触：確認</li>
+        <li>市民登録：<span style="color:#ff4444;font-weight:700;">該当なし</span></li>
+      </ul>
+    </div>
+
+    <div class="verdict">
+      <div class="v1">確認結果</div>
+      <div class="v2">あなたは、肉倉市に存在しない市民です。</div>
+      <div class="v3" id="trigger-door">存在しない市民は、保護対象ではありません。</div>
+      <div class="v4">処理番号：NK-NOT-EXISTS-2026-VISITOR</div>
+    </div>
+
+    <div class="final-notice" id="finalNotice" style="display:none;">
+      職員が確認に向かっています。<br>
+      その場を離れないでください。
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner" style="opacity:0.3;">
+    <div>
+      <h4>肉倉市役所</h4>
+      〒000-0000 肉倉県肉倉市中央1丁目1番地
+    </div>
+    <div></div>
+    <div>
+      <h4>供給課</h4>
+      直通：内線00
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">Copyright © 肉倉市役所. All Rights Reserved.</div>
+
+<div class="page-number" style="color:#222;">Page ID: 12/12</div>
+
+<script src="js/search.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const phase1 = document.getElementById("phase1");
+    const phase2 = document.getElementById("phase2");
+    const scanLine = document.getElementById("scanLine");
+    const finalNotice = document.getElementById("finalNotice");
+    const searchInput = document.getElementById("searchInput");
+
+    // 3秒後にフェーズ切り替え
+    setTimeout(function () {
+      // スキャンライン開始
+      scanLine.style.display = "block";
+      document.body.classList.add("phase2");
+
+      // phase1フェードアウト
+      phase1.style.transition = "opacity 1s";
+      phase1.style.opacity = "0";
+
+      setTimeout(function () {
+        phase1.style.display = "none";
+        phase2.style.display = "block";
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            phase2.classList.add("visible");
+          });
+        });
+      }, 1000);
+    }, 3000);
+
+    // ドアノック音の準備
+    const doorAudio = new Audio("se/door.mp3");
+    doorAudio.preload = "auto";
+    let audioUnlocked = false;
+
+    // ユーザーの最初の操作でAudioをアンロック（ブラウザの自動再生制限を回避）
+    function unlockAudio() {
+      if (audioUnlocked) return;
+      audioUnlocked = true;
+      // 無音で一瞬再生→停止してアンロック
+      doorAudio.volume = 0;
+      doorAudio.play().then(function () {
+        doorAudio.pause();
+        doorAudio.currentTime = 0;
+        doorAudio.volume = 1;
+      }).catch(function () {});
+    }
+    document.addEventListener("click", unlockAudio, { once: true });
+    document.addEventListener("scroll", unlockAudio, { once: true });
+    document.addEventListener("keydown", unlockAudio, { once: true });
+
+    // フェーズ2表示から約2秒後（「保護対象ではありません」が見えるタイミング）に再生
+    // フェーズ2は3+1=4秒後に表示 → 合計約6秒後
+    setTimeout(function () {
+      doorAudio.volume = 1;
+      doorAudio.play().catch(function () {});
+    }, 6000);
+
+    // 最終メッセージ表示
+    setTimeout(function () {
+      finalNotice.style.display = "block";
+    }, 7000);
+
+    // 検索フォームに自動入力
+    setTimeout(function () {
+      if (searchInput) {
+        let text = "いただきます";
+        let i = 0;
+        searchInput.value = "";
+        const typing = setInterval(function () {
+          if (i < text.length) {
+            searchInput.value += text[i];
+            i++;
+          } else {
+            clearInterval(typing);
+          }
+        }, 200);
+      }
+    }, 9000);
+  });
+</script>
+</body>
+</html>
