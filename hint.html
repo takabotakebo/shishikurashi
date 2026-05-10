@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>攻略ヒント｜肉倉市役所ARG</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .hint-intro {
+    background: #f9f7f2;
+    border: 1px solid #ddd;
+    border-left: 4px solid #8b1a1a;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+  }
+  .hint-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 32px;
+  }
+  .hint-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .hint-table th {
+    background: #8b1a1a;
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .hint-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .hint-table tr:nth-child(even) td {
+    background: #faf8f5;
+  }
+  .hint-table tr:hover td {
+    background: #f3ede6;
+  }
+  .no-cell {
+    font-weight: 700;
+    color: #8b1a1a;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .page-name-cell {
+    font-weight: 700;
+    color: #222;
+  }
+  .hidden-cell {
+    position: relative;
+  }
+  .hidden-text {
+    display: none;
+  }
+  .reveal-btn {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 12px;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #555;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .reveal-btn:hover {
+    background: #ddd;
+  }
+  .hidden-cell.revealed .reveal-btn {
+    display: none;
+  }
+  .hidden-cell.revealed .hidden-text {
+    display: block;
+  }
+  .tag-direct {
+    display: inline-block;
+    background: #e8f0e8;
+    color: #2a6a2a;
+    border: 1px solid #aacfaa;
+    border-radius: 3px;
+    padding: 1px 7px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .tag-search {
+    display: inline-block;
+    background: #fde8e8;
+    color: #8b1a1a;
+    border: 1px solid #e0aaaa;
+    border-radius: 3px;
+    padding: 1px 7px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .keyword-box {
+    font-family: monospace;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+  .reveal-all-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 18px;
+    background: #8b1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .reveal-all-btn:hover {
+    background: #6e1515;
+  }
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <a href="index.html" class="site-name" style="text-decoration:none;color:#fff;">肉倉市役所ホームページ</a>
+  <nav>
+    <a href="index.html">トップ</a>
+    <a href="life.html">暮らし</a>
+    <a href="tourism.html">観光</a>
+    <a href="life.html">申請・手続き</a>
+    <a href="index.html#news">お知らせ</a>
+  </nav>
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="サイト内検索">
+    <button type="submit">検索</button>
+  </form>
+</div>
+
+<div id="site-header">
+  <a href="index.html" style="display:block;flex-shrink:0;"><img src="img/emblem_b.png" alt="肉倉市章" class="city-emblem-img"></a>
+  <div class="header-text">
+    <h1>肉倉市役所</h1>
+    <p>Shishikura City Official Website — 〒000-0000 肉倉県肉倉市中央1丁目1番地</p>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <a href="index.html">トップ</a> <span>›</span> 攻略ヒント
+</div>
+
+<div class="page-wrapper">
+  <div class="page-title-bar">
+    <h2>攻略ヒント一覧</h2>
+  </div>
+
+  <div class="section-block">
+    <div class="section-content">
+      <div class="hint-intro">
+        このページは<strong>肉倉市役所ARG</strong>の攻略ヒントをまとめたページです。<br>
+        全12ページが存在します。「到達方法」「検索キーワード」「ヒントの場所」はネタバレになるため、各行のボタンをクリックすると表示されます。<br>
+        すべて自力で辿り着けた方は、ぜひ最後のページまで。
+      </div>
+
+      <button class="reveal-all-btn" id="revealAllBtn">すべてのヒントを表示する</button>
+
+      <div class="hint-table-wrapper">
+        <table class="hint-table">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>ページ名</th>
+              <th>到達方法</th>
+              <th>検索キーワード</th>
+              <th>ヒントの場所</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="no-cell">1</td>
+              <td class="page-name-cell">トップページ</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-direct">直接アクセス</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">なし</span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">最初から表示</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">2</td>
+              <td class="page-name-cell">暮らしの手続き</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-direct">直接アクセス</span><br>トップページの通常リンク</span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">なし</span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">トップページのメニュー</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">3</td>
+              <td class="page-name-cell">観光案内</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-direct">直接アクセス</span><br>トップページの通常リンク</span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">なし</span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">トップページのメニュー</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">4</td>
+              <td class="page-name-cell">市長あいさつ</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-direct">直接アクセス</span><br>トップページの通常リンク</span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">なし</span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">トップページのメニュー</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">5</td>
+              <td class="page-name-cell">供給課からのお知らせ</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-search">検索フォーム</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="keyword-box">供給課</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">2ページ目「暮らしの手続き」内</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">6</td>
+              <td class="page-name-cell">児童見守り制度</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-search">検索フォーム</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="keyword-box">児童見守り制度</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">5ページ目「供給課からのお知らせ」内</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">7</td>
+              <td class="page-name-cell">赤印世帯について</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-search">検索フォーム</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="keyword-box">赤印世帯</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">4ページ目「市長あいさつ」内</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">8</td>
+              <td class="page-name-cell">肉倉市郷土資料館</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-search">検索フォーム</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="keyword-box">郷土資料館</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">3ページ目「観光案内」内</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">9</td>
+              <td class="page-name-cell">緊急放送記録</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-search">検索フォーム</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="keyword-box">緊急放送記録</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">6ページ目「児童見守り制度」内</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">10</td>
+              <td class="page-name-cell">市民課内部通達</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-search">検索フォーム</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="keyword-box">市民課内部通達</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">7ページ目「赤印世帯について」内</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">11</td>
+              <td class="page-name-cell">行方不明者一覧</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-search">検索フォーム</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="keyword-box">行方不明者一覧</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">9ページ目「緊急放送記録」内</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="no-cell">12</td>
+              <td class="page-name-cell">404ではありません</td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="tag-search">検索フォーム</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text"><span class="keyword-box">存在しない市民</span></span>
+              </td>
+              <td class="hidden-cell">
+                <span class="reveal-btn">表示する</span>
+                <span class="hidden-text">8・10・11ページ目内</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>肉倉市役所</h4>
+      〒000-0000 肉倉県肉倉市中央1丁目1番地<br>
+      電話：000-000-0000<br>
+      開庁時間：午前8時30分〜午後5時15分（土日祝・年末年始を除く）
+    </div>
+    <div>
+      <h4>関連リンク</h4>
+      <a href="life.html">暮らしの手続き</a><br>
+      <a href="tourism.html">観光案内</a><br>
+      <a href="mayor.html">市長あいさつ</a>
+    </div>
+    <div>
+      <h4>お問い合わせ</h4>
+      市民課：000-000-0001<br>
+      防災課：000-000-0003
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">このWebサイトの内容はフィクションであり、実在の人物・団体とは一切関係がありません。<br>Copyright &copy;KAF. All Rights Reserved.</div>
+
+<script src="js/search.js"></script>
+<script>
+  document.querySelectorAll(".reveal-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      btn.closest(".hidden-cell").classList.add("revealed");
+    });
+  });
+
+  document.getElementById("revealAllBtn").addEventListener("click", function () {
+    document.querySelectorAll(".hidden-cell").forEach(function (cell) {
+      cell.classList.add("revealed");
+    });
+  });
+</script>
+</body>
+</html>
